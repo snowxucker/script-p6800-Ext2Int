@@ -1,0 +1,4 @@
+script-p6800-Ext2Int
+====================
+
+#!/system/bin/sh #extsd2internalsd is a modification that allows to switch internal sd to external sd and viceversa. With this you can use default internal sd only for app storage #and the external sd to store all apps resource and all others stuff. The resut is a very big increase of installable apps on GalaxyTab7.7 #All credits to Snowxucker of xda forum for the idea and script and to GalaxyTAB7.7 for the cmw zip.  #xda thread url at  sleep 10 mount -o remount,rw / mount -t vfat -o umask=0000 /dev/block/vold/179:24 /mnt/sdcard mount -t vfat -o umask=0000 /dev/block/vold/179:25 /storage/sdcard0 sleep 30 mount -o bind /data/media /mnt/emmc mount -o bind /data/media /storage/sdcard chmod 777 /mnt/emmc sleep 30 mkdir -p /mnt/emmc /external_sd/sdcard1 touch /mnt/extSdCard/external_sd/ sleep 10 mount -o bind /storage/sdcard0 /mnt/emmc/storage/sdcard1 exit
